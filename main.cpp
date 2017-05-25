@@ -5,9 +5,9 @@
 using namespace std;
 
 char tablero[3][3];
-char test[3][3] = {{'x','o','o'},
-                    {'-','-','-'},
-                    {'-','o','x'}};
+char test[3][3] = {{'-','-','x'},
+                    {'-','x','-'},
+                    {'x','-','-'}};
 char jugadorTurno;
 bool hayGanador;
 
@@ -23,6 +23,7 @@ void iniciarJuego(){
 };
 
 void checkGanador(){
+    //Horizontal
     if(test[0][0]=='x' && test[0][1]=='x' && test[0][2]=='x' || test[0][0]=='o' && test[0][1]=='o' && test[0][2]=='o' ){
         cout << "Ganaste";
     }
@@ -30,6 +31,23 @@ void checkGanador(){
         cout << "Ganaste";
     }
     if(test[2][0]=='x' && test[2][1]=='x' && test[2][2]=='x' || test[2][0]=='o' && test[2][1]=='o' && test[2][2]=='o' ){
+        cout << "Ganaste";
+    }
+    //Vertical
+    if(test[0][0]=='x' && test[1][0]=='x' && test[2][0]=='x' || test[0][0]=='o' && test[1][0]=='o' && test[2][0]=='o' ){
+        cout << "Ganaste";
+    }
+    if(test[0][1]=='x' && test[1][1]=='x' && test[2][1]=='x' || test[0][1]=='o' && test[1][1]=='o' && test[2][1]=='o' ){
+        cout << "Ganaste";
+    }
+    if(test[0][2]=='x' && test[1][2]=='x' && test[2][2]=='x' || test[0][2]=='o' && test[1][2]=='o' && test[2][2]=='o' ){
+        cout << "Ganaste";
+    }
+    //Diagonal
+    if(test[0][0]=='x' && test[1][1]=='x' && test[2][2]=='x' || test[0][0]=='o' && test[1][1]=='o' && test[2][2]=='o' ){
+        cout << "Ganaste";
+    }
+    if(test[0][2]=='x' && test[1][1]=='x' && test[2][0]=='x' || test[0][2]=='o' && test[1][1]=='o' && test[2][0]=='o' ){
         cout << "Ganaste";
     }
 }
